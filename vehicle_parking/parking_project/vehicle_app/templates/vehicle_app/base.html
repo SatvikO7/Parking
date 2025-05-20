@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Vehicle Parking{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'vehicle_app/styles.css' %}">
+</head>
+<body>
+    <nav>
+        {% if not user.is_authenticated %}
+            <a href="{% url 'home' %}">Home</a> |
+        {% endif %}
+    
+        {% if user.is_authenticated %}
+        <nav>
+            <a href="{% url 'home' %}">Home</a> |
+            <a href="{% url 'vehicle_list' %}">My Vehicles</a> |
+            <a href="{% url 'register_vehicle' %}">Register Vehicle</a> |
+            <a href="{% url 'parking_history' %}">Parking History</a> |
+        
+            <form action="{% url 'logout' %}" method="post" style="display: inline;">
+                {% csrf_token %}
+                <button type="submit" class="nav-logout-button">Logout</button>
+            </form>
+            {% if user.is_staff %}
+                <!-- <a href="{% url 'admin_parking_history' %}">|  Admin Parking History</a> | -->
+            {% endif %}
+
+        </nav>
+        
+        {% else %}
+            <a href="{% url 'login' %}">Login</a> |
+            <a href="{% url 'register' %}">Register</a>
+        {% endif %}
+    </nav>
+    
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{% extends 'vehicle_app/base.html' %}
+
+{% block content %}
+  <h2>Parking History</h2>
+  {% if history %}
+    <table>
+      <thead>
+        <tr>
+          <th>Vehicle</th>
+          <th>Slot</th>
+          <!-- <th>Parked At</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        {% for entry in history %}
+          <tr>
+            <td>{{ entry.vehicle }}</td>
+            <td>{{ entry.slot }}</td>
+            <!-- <td>{{ entry.parked_at }}</td> -->
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No parking history available.</p>
+  {% endif %}
+{% endblock %}

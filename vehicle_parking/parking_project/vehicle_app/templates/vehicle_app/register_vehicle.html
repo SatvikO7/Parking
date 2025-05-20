@@ -1,0 +1,37 @@
+{% extends "vehicle_app/base.html" %}
+{% block content %}
+
+
+
+
+
+<div style="max-width: 600px; margin: auto; padding: 20px;">
+
+
+  
+  <!-- 📝 Registration Form Card -->
+  <div style="background-color: #f9f9f9; padding: 25px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+    <h2 style="margin-bottom: 20px; text-align: center;">Register a Vehicle</h2>
+    
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" style="
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-top: 10px;
+      ">
+        Register
+      </button>
+    </form>
+  </div>
+
+</div>
+
+
+
+{% endblock %}

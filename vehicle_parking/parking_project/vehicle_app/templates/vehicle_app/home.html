@@ -1,0 +1,12 @@
+{% extends "vehicle_app/base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h2>Welcome to CampusWheels</h2>
+    {% if user.is_authenticated %}
+        <p>Hello, {{ user.username }}! You can <a href="{% url 'vehicle_list' %}"><strong>View your vehicles</strong></a> OR <a href="{% url 'register_vehicle' %}"><strong>Register a new one</strong></a>.</p>
+    {% else %}
+        <p>Please <a href="{% url 'login' %}">log in</a> to register and view your vehicles.</p>
+    {% endif %}
+{% endblock %}

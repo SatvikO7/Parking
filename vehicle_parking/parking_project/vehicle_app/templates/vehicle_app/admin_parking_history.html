@@ -1,0 +1,31 @@
+{% extends 'vehicle_app/base.html' %}
+
+{% block content %}
+<h2>All Users Parking History (Admin)</h2>
+
+{% if history %}
+    <table>
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Vehicle</th>
+                <th>Slot</th>
+                <th>Parked At</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in history %}
+                <tr>
+                    <td>{{ record.user.username }}</td>
+                    <td>{{ record.vehicle }}</td>
+                    <td>{{ record.slot }}</td>
+                    <td>{{ record.parked_at|date:"M d, Y H:i" }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>No parking history available.</p>
+{% endif %}
+
+{% endblock %}

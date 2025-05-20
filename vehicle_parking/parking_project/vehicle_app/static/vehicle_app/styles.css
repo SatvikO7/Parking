@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #343a40;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input,
+form select,
+form button {
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 16px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+thead {
+    background-color: #007bff;
+    color: white;
+}
+
+.error {
+    color: red;
+}
+
+/* ... your existing nav, nav a styles ... */
+.nav-logout-button {
+    background: none;
+    border: none;
+    color: white;       /* Matches nav a */
+    padding: 0;         /* Remove default button padding */
+    margin: 0 10px;     /* Matches nav a */
+    text-decoration: none; /* Matches nav a */
+    cursor: pointer;
+    font-family: Arial, sans-serif; /* Matches body, good */
+    font-size: inherit; /* Will inherit font size from nav */
+    vertical-align: baseline; /* Helps align with text/links */
+}
+
+.nav-logout-button:hover {
+    text-decoration: underline; /* Matches nav a:hover */
+    color: #ffdd00;          /* Your chosen hover color */
+}
