@@ -39,8 +39,8 @@ VEHICLE_PARKING/
 
 ⚙️ Installation & Setup
 1. Clone the repository
-git clone https://github.com/your-username/CampusWheels.git
-cd VEHICLE_PARKING/parking_project
+git clone https://github.com/SatvikO7/Parking.git
+cd vehicle_parking/parking_project
 
 2. Create & activate virtual environment
 python -m venv env
