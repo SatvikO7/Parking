@@ -72,4 +72,6 @@ python manage.py createsuperuser
 ```
 
 11. Run the server
+```
 python manage.py runserver
+```
